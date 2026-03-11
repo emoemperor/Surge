@@ -15,7 +15,7 @@ Surge
  * */
 
 const NAME = "九号出行签到";
-const $ = new Env(NAME);
+const $ = new Env(NAME, { logLevel: "debug" });
 const SIGN_URL = `https://cn-cbu-gateway.ninebot.com/portal/api/user-sign/v2/sign`;
 const prefix = "emo_";
 const cookieKey = `${prefix}ninebot_cookie`;
@@ -35,7 +35,6 @@ const deviceIdKey = `${prefix}ninebot_device_id`;
 
 async function check_in(cookie, deviceId) {
     const headers = {
-        ":authority": "cn-cbu-gateway.ninebot.com",
         "sys-language": "zh-CN",
         "sec-fetch-dest": "empty",
         "accept": "application/json, text/plain, */*",
