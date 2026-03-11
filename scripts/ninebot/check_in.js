@@ -64,6 +64,7 @@ async function check_in(cookie, deviceId) {
             $.msg(NAME, "❌签到失败", err);
         } else {
             try {
+                $.log(data);
                 const result = JSON.parse(data);
                 if (result.code === 0) {
                     if (data.data.rewardList && data.data.rewardList.length > 0) {
