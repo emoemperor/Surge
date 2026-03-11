@@ -1,0 +1,15 @@
+#!name=九号出行签到
+#!desc=九号出行Cookie获取、自动签到
+#!author=emoemperor
+#!homepage=https://github.com/emoemperor/Surge
+#!icon=https://raw.githubusercontent.com/emoemperor/Surge/main/scripts/ninebot/logo.png
+#!date=2026-03-10
+
+
+[Script]
+
+九号出行签到 = type=cron,cronexp=0 7 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/emoemperor/Surge/master/scripts/ninebot/check_in.js
+九号出行签到Cookie获取 = type=http-request,pattern=^https:\/\/cn-cbu-gateway\.ninebot\.com\/portal\/api\/user-sign\/v2\/status\?t=\d+$,wake-system=1,script-path=https://raw.githubusercontent.com/emoemperor/Surge/master/scripts/ninebot/cookie.js
+
+[MITM]
+hostname = %APPEND% cn-cbu-gateway.ninebot.com
