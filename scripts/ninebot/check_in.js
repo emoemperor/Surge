@@ -57,7 +57,7 @@ async function check_in(cookie, deviceId) {
         headers,
         body: JSON.stringify(body),
     };
-    $.post(options, (err, resp, data) => {
+    await $.post(options, (err, resp, data) => {
         if (err) {
             $.logErr(err);
             $.msg(NAME, "❌签到失败", err);

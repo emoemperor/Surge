@@ -80,7 +80,7 @@ async function check_in(token) {
         headers: headers,
         body: body
     };
-    $.post(options, (err, resp, data) => {
+    await $.post(options, (err, resp, data) => {
         if (err) {
             $.msg(NAME, "❌签到失败", err);
             return;
