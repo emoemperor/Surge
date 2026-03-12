@@ -22,7 +22,6 @@ const $ = new Env(NAME);
         const storedCookie = $.getval(cookieKey);
         if (storedCookie !== cookie) {
             $.setval(cookie, cookieKey);
-            $.setval(Date.now(), updateKey);
             $.msg(NAME, "✅更新cookie");
         } else {
             $.log("cookie未发生变化,无需更新");
